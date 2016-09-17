@@ -11,6 +11,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Logger;
 import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mFirebaseRef.child("title").setValue(editTitle.getText().toString());
+                editTitle.setText("");
             }
         });
     }
@@ -45,7 +47,9 @@ public class MainActivity extends AppCompatActivity {
         mFirebaseRef.child("title").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                txtTitle.setText(dataSnapshot.getValue().toString());
+                if (dataSnapshot.getValue() != null) {
+                    txtTitle.setText(dataSnapshot.getValue().toString());
+                }
             }
 
             @Override

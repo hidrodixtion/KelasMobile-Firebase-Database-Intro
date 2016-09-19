@@ -35,8 +35,14 @@ public class MainActivity extends AppCompatActivity {
         btnSync.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mFirebaseRef.child("title").setValue(editTitle.getText().toString());
+                String editText = editTitle.getText().toString();
+
+                mFirebaseRef.child("title").setValue(editText);
+
                 editTitle.setText("");
+
+                DatabaseReference ref = mFirebaseRef.child("order").push();
+                ref.child("menu").setValue(editText);
             }
         });
     }

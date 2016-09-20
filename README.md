@@ -8,8 +8,8 @@ Before you build:
     ```json
     {
         "rules": {
-            ".read": "auth != null",
-            ".write": "auth != null"
+            ".read": true,
+            ".write": true
         }
     }
     ```

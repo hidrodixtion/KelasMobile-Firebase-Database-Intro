@@ -2,7 +2,7 @@
 ### Topic : Intro To Firebase Realtime Database
 
 Before you build:
-- Download `google-services.json` from your firebase project.
+- Download `google-services.json` from your firebase project and place it inside `app` directory.
 - Firebase default setting only allow authenticated users to access the database. You can change it so unauthenticated user is allowed.
     - Go to Firebase > Database > Rule and change the content into :
     ```json

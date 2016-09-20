@@ -14,3 +14,4 @@ Before you build:
     }
     ```
     - Please **ONLY** do this in development mode. **DO NOT** do this in Production.
+- Uncomment line 16 in `SimpleBaseApplication.java` to show firebase connectivity logs.

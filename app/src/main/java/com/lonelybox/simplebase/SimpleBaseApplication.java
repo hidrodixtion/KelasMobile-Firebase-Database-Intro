@@ -13,6 +13,6 @@ public class SimpleBaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        FirebaseDatabase.getInstance().setLogLevel(Logger.Level.DEBUG);
+        //FirebaseDatabase.getInstance().setLogLevel(Logger.Level.DEBUG);
     }
 }
